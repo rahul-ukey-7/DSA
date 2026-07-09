@@ -1,0 +1,24 @@
+//Name: Rahul Ukey
+//MIS: 112515216
+struct ListNode *getIntersectionNode(struct ListNode *headA, struct ListNode *headB) {
+
+    struct ListNode *ptr1 = headA;
+    struct ListNode *ptr2 = headB;
+
+    while (ptr1 != ptr2){
+
+        if (ptr1 == NULL){
+            ptr1 = headB;
+        }else{
+            ptr1 = ptr1->next;
+        }
+
+        if (ptr2 == NULL){
+            ptr2 = headA;
+        }else{
+            ptr2 = ptr2->next;
+        }
+    }
+
+    return ptr1;
+}
